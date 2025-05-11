@@ -1,0 +1,11 @@
+{
+  "name": "saber-livre",
+  "version": "1.0.0",
+  "description": "**Saber Livre** é uma plataforma open source para compartilhar conhecimento e cursos gratuitos, com a missão de tornar a educação acessível e transformar realidades. Acreditamos que o conhecimento é o primeiro passo para a liberdade pessoal, profissional e social.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
