@@ -1,5 +1,9 @@
 function Home() {
-  return <h1>Let`s go Sam, diretamente para a liberdade!</h1>;
+  return (
+    <h1>
+      A ignorância é uma dádiva mas o conhecimento liberta verdadeiramente! 😁
+    </h1>
+  );
 }
 
 export default Home;
