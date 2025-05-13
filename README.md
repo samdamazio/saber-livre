@@ -18,10 +18,10 @@ Libertar mentes através do acesso irrestrito ao conhecimento.
 
 ## 📦 Tecnologias principais
 
-- **Next.js / React Native / Expo**  
-- **Firebase (Auth, Firestore, Storage, Hosting)**  
-- **Tailwind CSS** (caso web)  
-- **TypeScript**  
+- **Next.js / React Native / Expo**
+- **Firebase (Auth, Firestore, Storage, Hosting)**
+- **Tailwind CSS** (caso web)
+- **TypeScript**
 - **GitHub Actions / CI-CD**
 
 ## 🌱 Status
@@ -35,4 +35,4 @@ Veja o [CONTRIBUTING.md](./CONTRIBUTING.md) e abra uma issue ou pull request.
 
 ---
 
-> 💡 *"O saber é livre. E liberta."*
+> 💡 _"O saber é livre. E liberta."_
