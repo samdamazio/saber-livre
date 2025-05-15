@@ -4,10 +4,11 @@
   "description": "**Saber Livre** é uma plataforma open source para compartilhar conhecimento e cursos gratuitos, com a missão de tornar a educação acessível e transformar realidades. Acreditamos que o conhecimento é o primeiro passo para a liberdade pessoal, profissional e social.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
     "lint:check": "prettier --check .",
-    "lint:fix": "prettier --write ."
+    "lint:fix": "prettier --write .",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "",
   "license": "MIT",
@@ -17,6 +18,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "prettier": "^3.5.3"
   }
 }
