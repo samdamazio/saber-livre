@@ -4,7 +4,11 @@
   "description": "**Saber Livre** é uma plataforma open source para compartilhar conhecimento e cursos gratuitos, com a missão de tornar a educação acessível e transformar realidades. Acreditamos que o conhecimento é o primeiro passo para a liberdade pessoal, profissional e social.",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run services:up && next dev",
+    "services:up": "docker-compose -f infra/compose.yaml up -d",
+    "services:stop": "docker-compose -f infra/compose.yaml stop",
+    "services:down": "docker-compose -f infra/compose.yaml down",
+    "services:info": "docker ps --all",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
