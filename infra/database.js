@@ -9,6 +9,7 @@ async function query(queryObject) {
     password: process.env.POSTGRES_PASSWORD,
     ssl: getSSLValue(),
   });
+
   try {
     await client.connect();
     const result = await client.query(queryObject);
@@ -29,7 +30,8 @@ function getSSLValue() {
       cert: process.env.POSTGRES_CERT,
     };
   } else {
-    return process.env.NODE_ENV === "development" ? false : true;
+    // console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
+    return process.env.NODE_ENV === "production" ? true : false;
   }
 }
 
