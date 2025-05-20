@@ -42,7 +42,9 @@ function getSSLValue() {
   }
 }
 
-export default {
+const database = {
   query,
   getNewClient,
 };
+
+export default database;
