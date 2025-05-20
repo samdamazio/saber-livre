@@ -16,5 +16,5 @@ function checkPostgres() {
   }
 }
 
-console.log("\n\n🔴 Aguardando Postgres aceitar conexões");
+console.log("\n\n🔴 Aguardando Postgres aceitar conexões TCP/IP");
 checkPostgres();
