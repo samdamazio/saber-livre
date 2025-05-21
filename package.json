@@ -4,7 +4,7 @@
   "description": "**Saber Livre** é uma plataforma open source para compartilhar conhecimento e cursos gratuitos, com a missão de tornar a educação acessível e transformar realidades. Acreditamos que o conhecimento é o primeiro passo para a liberdade pessoal, profissional e social.",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run services:up && npm run services:wait && npm run migrations:up && next dev",
+    "dev": "npm run services:up && npm run services:wait:database && npm run migrations:up && next dev",
     "test": "npm run services:up && concurrently --names next,jest -k --success command-jest \"next dev\" \"jest --runInBand --verbose\"",
     "posttest": "npm run services:stop",
     "test:watch": "jest --watchAll --runInBand",
