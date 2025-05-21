@@ -6,13 +6,14 @@
   "scripts": {
     "dev": "npm run services:up && npm run services:wait && npm run migrations:up && next dev",
     "test": "npm run services:up && concurrently --names next,jest -k --success command-jest \"next dev\" \"jest --runInBand --verbose\"",
+    "posttest": "npm run services:stop",
     "test:watch": "jest --watchAll --runInBand",
     "services:up": "docker-compose -f infra/compose.yaml up -d",
     "services:stop": "docker-compose -f infra/compose.yaml stop",
     "services:down": "docker-compose -f infra/compose.yaml down",
-    "services:wait:database": "node infra/scripts/wait-for-postgres.js",
     "services:destroy": "docker system prune -a",
     "services:info": "docker ps --all",
+    "services:wait:database": "node infra/scripts/wait-for-postgres.js",
     "migrations:create": "node-pg-migrate --migrations-dir infra/migrations create",
     "migrations:up": "node-pg-migrate -m infra/migrations --envPath .env.development up",
     "lint:prettier:check": "prettier --check .",
@@ -21,7 +22,7 @@
     "prepare": "husky",
     "commit": "cz"
   },
-  "author": "",
+  "author": "samdamazio",
   "license": "MIT",
   "dependencies": {
     "async-retry": "1.3.3",
