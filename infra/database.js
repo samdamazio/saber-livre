@@ -11,7 +11,7 @@ async function query(queryObject) {
     console.error("Error executing query", error.stack);
     throw error;
   } finally {
-    await client.end();
+    await client?.end();
   }
 }
 
