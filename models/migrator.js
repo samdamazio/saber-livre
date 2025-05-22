@@ -6,9 +6,9 @@ const defaultMigrationOptions = {
   // databaseUrl: process.env.DATABASE_URL, outra forma de passar a conexão
   dir: resolve("infra", "migrations"),
   direction: "up",
-  verbose: true,
   dryRun: true,
   migrationsTable: "pgmigrations",
+  log: () => {},
 };
 
 async function listPendingMigrations() {
