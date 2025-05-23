@@ -17,19 +17,21 @@ exports.up = (pgm) => {
       notNull: true,
       unique: true,
     },
-    // For reference, 72 character is the maximum length for a bcrypt generated password hash https://security.stackexchange.com/questions/39849/does-bcrypt-have-a-maximum-password-length/39851#39851
+    // For reference, 60 character is the maximum length for a bcrypt generated password hash https://www.npmjs.com/package/bcrypt#hash-info
     password: {
-      type: "varchar(72)",
+      type: "varchar(60)",
       notNull: true,
     },
     // For reference, why timestamp with timezone: https://justatheory.com/2012/04/postgres-use-timestamptz/
     created_at: {
       type: "timestamptz",
-      default: pgm.func("now()"),
+      default: pgm.func("timezone('utc', now())"),
+      notNull: true,
     },
     updated_at: {
       type: "timestamptz",
-      default: pgm.func("now()"),
+      default: pgm.func("timezone('utc', now())"),
+      notNull: true,
     },
   });
 };
