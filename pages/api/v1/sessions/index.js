@@ -1,7 +1,6 @@
 import { createRouter } from "next-connect";
 import controller from "infra/controller.js";
 import authentication from "models/authentication.js";
-import { UnauthorizedError } from "infra/errors.js";
 
 const router = createRouter();
 
@@ -17,5 +16,5 @@ async function postHandler(request, response) {
     userInputValues.password,
   );
 
-  return response.status(201).json({});
+  return response.status(201).json(authenticatedUser);
 }
