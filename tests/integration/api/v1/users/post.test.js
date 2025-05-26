@@ -18,8 +18,8 @@ describe("POST /api/v1/users", () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          username: "filipedeschamps",
-          email: "contato@curso.dev",
+          username: "samdamazio",
+          email: "contato@ceasinha.com",
           password: "senha123",
         }),
       });
@@ -30,8 +30,8 @@ describe("POST /api/v1/users", () => {
 
       expect(responseBody).toEqual({
         id: responseBody.id,
-        username: "filipedeschamps",
-        email: "contato@curso.dev",
+        username: "samdamazio",
+        email: "contato@ceasinha.com",
         password: responseBody.password,
         created_at: responseBody.created_at,
         updated_at: responseBody.updated_at,
@@ -41,7 +41,7 @@ describe("POST /api/v1/users", () => {
       expect(Date.parse(responseBody.created_at)).not.toBeNaN();
       expect(Date.parse(responseBody.updated_at)).not.toBeNaN();
 
-      const userInDatabase = await user.findOneByUsername("filipedeschamps");
+      const userInDatabase = await user.findOneByUsername("samdamazio");
       const correctPasswordMatch = await password.compare(
         "senha123",
         userInDatabase.password,
