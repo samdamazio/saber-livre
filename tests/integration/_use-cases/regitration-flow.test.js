@@ -36,12 +36,14 @@ describe("Use case Registration Flow (all successful)", () => {
       username: "RegistrationFlowUser",
       email: "registration.flow@ceasinha.app.br",
       password: createUserResponseBody.password,
-      features: [],
+      features: ["read:activation_token"],
       created_at: createUserResponseBody.created_at,
       updated_at: createUserResponseBody.updated_at,
     });
   });
+
   test("Receive activation email", async () => {});
+
   test("Active account", async () => {});
   test("Login", async () => {});
   test("Get user information", async () => {});
