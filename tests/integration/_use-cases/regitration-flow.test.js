@@ -1,6 +1,6 @@
 import orchestrator from "tests/orchestrator.js";
 import activation from "models/activation.js";
-import { act } from "react";
+import webserver from "infra/webserver";
 
 beforeAll(async () => {
   await orchestrator.waitForAllServices();
@@ -46,17 +46,24 @@ describe("Use case Registration Flow (all successful)", () => {
   test("Receive activation email", async () => {
     const lastEmail = await orchestrator.getLastEmail();
 
-    const activationToken = await activation.findOneByUserId(
-      createUserResponseBody.id,
-    );
-
     expect(lastEmail.sender).toBe("<contato@saberlivre.com.br>");
     expect(lastEmail.recipients[0]).toBe(
       "<registration.flow@saberlivre.com.br>",
     );
     expect(lastEmail.subject).toBe("Ative sua conta no Saber Livre!");
     expect(lastEmail.text).toContain("RegistrationFlowUser");
-    expect(lastEmail.text).toContain(activationToken.id);
+
+    const activationTokenId = orchestrator.extractUUID(lastEmail.text);
+
+    expect(lastEmail.text).toContain(
+      `${webserver.origin}/cadastro/ativar/${activationTokenId}`,
+    );
+
+    const activationTokenObject =
+      await activation.findOneValidById(activationTokenId);
+
+    expect(activationTokenObject.user_id).toBe(createUserResponseBody.id);
+    expect(activationTokenObject.used_at).toBe(null);
   });
 
   test("Active account", async () => {});
