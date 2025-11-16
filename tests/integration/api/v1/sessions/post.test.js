@@ -110,7 +110,7 @@ describe("POST /api/v1/sessions", () => {
         }),
       });
 
-      expect(response.status).toBe(201); //created session
+      expect(response.status).toBe(201);
 
       const responseBody = await response.json();
       expect(responseBody).toEqual({

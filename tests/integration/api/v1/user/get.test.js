@@ -21,8 +21,7 @@ describe("GET /api/v1/user", () => {
       expect(responseBody).toEqual({
         name: "ForbiddenError",
         message: "Você não possui permissão para realizar esta ação.",
-        action:
-          'Verifique se seu usuário possui a feature "read:session".',
+        action: 'Verifique se seu usuário possui a feature "read:session".',
         status_code: 403,
       });
     });
@@ -110,7 +109,7 @@ describe("GET /api/v1/user", () => {
 
       const response = await fetch("http://localhost:3000/api/v1/user", {
         headers: {
-          cookie: `session_id=${sessionObject.token}`,
+          Cookie: `session_id=${sessionObject.token}`,
         },
       });
 
@@ -164,7 +163,7 @@ describe("GET /api/v1/user", () => {
 
       const response = await fetch("http://localhost:3000/api/v1/user", {
         headers: {
-          cookie: `session_id=${nonexistentToken}`,
+          Cookie: `session_id=${nonexistentToken}`,
         },
       });
 

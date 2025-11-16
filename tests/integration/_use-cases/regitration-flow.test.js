@@ -114,7 +114,7 @@ describe("Use case Registration Flow (all successful)", () => {
   test("Get user information", async () => {
     const userResponse = await fetch("http://localhost:3000/api/v1/user", {
       headers: {
-        cookie: `session_id=${createSessionsResponseBody.token}`,
+        Cookie: `session_id=${createSessionsResponseBody.token}`,
       },
     });
     expect(userResponse.status).toBe(200);
@@ -122,5 +122,5 @@ describe("Use case Registration Flow (all successful)", () => {
     const userResponseBody = await userResponse.json();
 
     expect(userResponseBody.id).toBe(createUserResponseBody.id);
-    });
+  });
 });

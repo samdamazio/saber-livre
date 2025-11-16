@@ -18,7 +18,7 @@ describe("DELETE /api/v1/sessions", () => {
       const response = await fetch("http://localhost:3000/api/v1/sessions", {
         method: "DELETE",
         headers: {
-          cookie: `session_id=${nonexistentToken}`,
+          Cookie: `session_id=${nonexistentToken}`,
         },
       });
 
