@@ -21,7 +21,6 @@ describe("POST /api/v1/migrations", () => {
         name: "ForbiddenError",
         action: 'Verifique se seu usuário possui a feature "create:migration".',
         message: "Você não possui permissão para realizar esta ação.",
-        name: "ForbiddenError",
         status_code: 403,
       });
     });
@@ -47,7 +46,6 @@ describe("POST /api/v1/migrations", () => {
         name: "ForbiddenError",
         action: 'Verifique se seu usuário possui a feature "create:migration".',
         message: "Você não possui permissão para realizar esta ação.",
-        name: "ForbiddenError",
         status_code: 403,
       });
     });
